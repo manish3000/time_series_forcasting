@@ -127,17 +127,6 @@ def main():
             y_pred_sample = model.predict(X_sample[:sample_size])
             y_pred_sample = y_pred_sample.flatten()
 
-            # Line plot
-            fig, ax = plt.subplots(figsize=(12, 5))
-            ax.plot(y_actual[:sample_size], label='Actual', linewidth=2, alpha=0.7)
-            ax.plot(y_pred_sample, label='Predicted', linewidth=2, alpha=0.7)
-            ax.set_xlabel('Sample Index')
-            ax.set_ylabel('Demand Forecast')
-            ax.set_title('Actual vs Predicted Demand Forecast (First 200 samples)')
-            ax.legend()
-            ax.grid(True, alpha=0.3)
-            st.pyplot(fig)
-
             # Scatter plot
             fig2, ax2 = plt.subplots(figsize=(8, 8))
             ax2.scatter(y_actual[:sample_size], y_pred_sample, alpha=0.5, s=20)
